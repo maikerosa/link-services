@@ -1,7 +1,21 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Item from "./components/item.vue"
+</script>
+
+<script>
+import Dados from './Dados/Services.json'
+export default {
+  data(){
+    return {
+      servicos: null
+      
+    }
+  },
+  mounted(){
+    this.servicos = Dados
+
+  }
+}
 </script>
 
 <template>
@@ -13,10 +27,22 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+
+   <h1>Seja bem-vindo(a)</h1>
+   <hr/>
+   <div class="itens">
+    <Item 
+      v-for="servico, index in servicos"
+      :key="index"
+      :item="servico"
+    />
+   </div>
+
+  
+   
 </template>
 
-<style scoped>
+<style> /** scoped só servirá para esse arq */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -27,5 +53,25 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+html{
+  background: url("https://i.ibb.co/ygPr07R/Design-sem-nome.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+
+}
+
+.itens{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+</style>
+
+<style scoped>
+img{
+  width: 70px;
 }
 </style>

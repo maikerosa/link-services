@@ -1,0 +1,13 @@
+[
+
+    {
+        "titulo": "WhatsApp",
+        "img"   : "https://cdn-icons-png.flaticon.com/512/124/124034.png?w=360",
+        "href"  : "https://migra.ga/maikewpp"
+    },
+    {
+        "titulo": "GitHub",
+        "img"   : "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+        "href"  : "https://github.com/maikerosa"
+    }
+]
